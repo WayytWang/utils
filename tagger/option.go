@@ -1,21 +1,16 @@
 package tagger
 
-// 用来配置
-// 1.需要tagger的结构体名后缀
-// 2.需要tagger的tagName和方式(下划线/驼峰) map["tagName"]"tagType"
-// 3.是否覆盖现有tag
-
 const (
 	camelCase = 1
 	snakeCase = 2
 )
 
 type GenTagOption struct {
-	Suffix  string
-	Key     string
-	TagType int
-	Cover   bool
-	Options []string
+	Suffix  string   // 结构体名后缀
+	Key     string   // tagKey
+	TagType int      // 驼峰/下划线
+	Cover   bool     // 是否覆盖
+	Options []string // 选项
 }
 
 func CamelCase(suffix, tag string, cover bool, opt ...string) GenTagOption {
