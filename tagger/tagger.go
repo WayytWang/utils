@@ -11,8 +11,6 @@ import (
 	"os"
 	"strings"
 
-	"utils/tagger/tag"
-
 	"github.com/iancoleman/strcase"
 )
 
@@ -99,7 +97,7 @@ func genTag(sName string, node *ast.Field, opts []GenTagOption) (tg string) {
 	if node.Tag != nil {
 		value = strings.ReplaceAll(node.Tag.Value,"`","")
 	}
-	tags, err := tag.Parse(value)
+	tags, err := Parse(value)
 	if err != nil {
 		return
 	}
@@ -125,7 +123,7 @@ func genTag(sName string, node *ast.Field, opts []GenTagOption) (tg string) {
 		default:
 			panic(errors.New("暂不支持"))
 		}
-		tgStruct := &tag.Tag{
+		tgStruct := &Tag{
 			Key:     opt.Key,
 			Name:    tagName,
 			Options: opt.Options,
