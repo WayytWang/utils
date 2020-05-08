@@ -8,15 +8,15 @@ import (
 )
 
 var HelperSet = wire.NewSet(
-	wire.Struct(new(inner.ZhaoSi), "*"),
-	wire.Bind(new(inner.Dancer), new(*inner.ZhaoSi)),
-
-	wire.Struct(new(inner.Kobe), "*"),
-	wire.Bind(new(inner.Player), new(*inner.Kobe)),
-
 	wire.Struct(new(inner.ChrisWu), "*"),
 	wire.Bind(new(inner.Rapper), new(*inner.ChrisWu)),
 
 	inner.InitZXY,
 	wire.Bind(new(inner.Singer), new(*inner.ZXY)),
+
+	wire.Struct(new(inner.ZhaoSi), "*"),
+	wire.Bind(new(inner.Dancer), new(*inner.ZhaoSi)),
+
+	wire.Struct(new(inner.Kobe), "*"),
+	wire.Bind(new(inner.Player), new(*inner.Kobe)),
 )

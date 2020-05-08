@@ -6,17 +6,16 @@
 package inject
 
 import (
-	"utils/wire_inject/example"
 	"utils/wire_inject/example/inner"
 )
 
 // Injectors from wire.go:
 
-func InitCXK() *example.CXK {
+func InitCXK() *inner.CXK {
 	zxy := inner.InitZXY()
 	zhaoSi := &inner.ZhaoSi{}
 	chrisWu := &inner.ChrisWu{}
 	kobe := &inner.Kobe{}
-	cxk := example.NewCXK(zxy, zhaoSi, chrisWu, kobe)
+	cxk := inner.NewCXK(zxy, zhaoSi, chrisWu, kobe)
 	return cxk
 }

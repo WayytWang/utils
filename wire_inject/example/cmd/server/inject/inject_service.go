@@ -2,11 +2,11 @@
 package inject
 
 import (
-	"utils/wire_inject/example"
+	"utils/wire_inject/example/inner"
 
 	"github.com/google/wire"
 )
 
 var ServiceSet = wire.NewSet(
-	example.NewCXK,
+	inner.NewCXK,
 )
