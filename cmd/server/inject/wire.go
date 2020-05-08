@@ -4,9 +4,9 @@ package inject
 
 import (
 	"github.com/google/wire"
-	"utils/wire_inject/test"
+	"utils/wire_inject/example"
 )
 
-func InitApplication()(*test.Application) {
+func InitCXK()(*example.CXK) {
 	panic(wire.Build(sets))
 }
